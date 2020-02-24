@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			windowHeight = window.innerHeight;
 		let layerHeight, layerWidth;
 
-		condition = windowWidth / windowHeight > frameProportion
+		windowWidth / windowHeight > frameProportion
 		? (
 			layerWidth = windowWidth,
 			layerHeight = layerWidth/frameProportion
