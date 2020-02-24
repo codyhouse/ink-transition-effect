@@ -11,18 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	function setLayerDimensions() {
 		const windowWidth = window.innerWidth,
-			windowHeight = window.innerHeight;
+			windowHeight = window.innerHeight,
+			condition = windowWidth / windowHeight > frameProportion;
 		let layerHeight, layerWidth;
 
-		windowWidth / windowHeight > frameProportion
-		? (
-			layerWidth = windowWidth,
-			layerHeight = layerWidth/frameProportion
-		)
-		: (
-			layerHeight = windowHeight*1.2,
-			layerWidth = layerHeight*frameProportion
-		)
+		layerWidth = `${condition ? windowWidth : windowHeight*1.2*frameProportion}`,
+		layerHeight = `${condition ? layerWidth/frameProportion : windowHeight*1.2}`,
 
 		transitionBackground.style.width = `${layerWidth*frames}px`,
 		transitionBackground.style.height = `${layerHeight}px`,
