@@ -207,12 +207,20 @@ Transition Layer
   top: 0;
   left: 0;
   z-index: 2;
-  height: 100%;
-  width: 100%;
+  width: 5100vh;
+  height: 120vh;
   opacity: 0;
   visibility: hidden;
   overflow: hidden;
 }
+
+@media screen and (min-aspect-ratio: 17/10) {
+  .cd-transition-layer .bg-layer {
+    width: 2500vw;
+    height: calc(100vw / 1.7)
+  }
+}
+
 .cd-transition-layer .bg-layer {
   position: absolute;
   left: 50%;
